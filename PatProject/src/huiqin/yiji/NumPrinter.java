@@ -11,9 +11,8 @@ public class NumPrinter {
 		int sum=0;
 		
 		for(int i=0;i<len;i++){
-			sum+=num.charAt(i)-'0';//方法２　字符分割＋string.substring(index - 1, index)＋list方法(用get：位置i和string的映射)
-			//方法３　利用数组定位映射关系，字符asc码计算
-		}
+			sum+=num.charAt(i)-'0';//鏂规硶锛掋�瀛楃鍒嗗壊锛媠tring.substring(index - 1, index)锛媗ist鏂规硶(鐢╣et锛氫綅缃甶鍜宻tring鐨勬槧灏�
+			//鏂规硶锛撱�鍒╃敤鏁扮粍瀹氫綅鏄犲皠鍏崇郴锛屽瓧绗sc鐮佽绠�		}
 		List<String> strs=new ArrayList<String>();
 		while((sum>=10)){
 			strs.add(String.valueOf((int)sum%(int)(Math.pow(10, 1))));
@@ -21,16 +20,17 @@ public class NumPrinter {
 		}
 		strs.add(String.valueOf(sum));
 		
-		for(int i=strs.size()-1;i>=0;i--){
-			String str=strs.get(i);
+		for(int j=strs.size()-1;j>=0;j--){
+			String str=strs.get(j);
 			String temString=getStringNum(str);
 			if(temString!=null){
 				System.out.print(temString+" ");
 			}
 		}
 	}
+	}
 	
-	//可用map进行映射
+	//鍙敤map杩涜鏄犲皠
 	public static String getStringNum(String str){
 		String tem=null;
 		switch (str) {
