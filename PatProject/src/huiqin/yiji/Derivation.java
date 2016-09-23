@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 /**
- * 不知道原题目的意思
+ * 不知道原题目的意思,可以进行观察逻辑
  * @author huiqin @date 2016年9月19日 下午1:01:16
  *
  */
