@@ -34,10 +34,10 @@ public class DijkstraMain {
 		Dijkstra graph = new Dijkstra(vertexs, edges);
 		//graph.printGraph();
 		graph.search();
-		Stack<Vertex> result=graph.getResultVertexs();
+		List<Vertex> result=graph.getResultVertexs();
 		
-		while(!result.isEmpty()){
-			System.out.print(result.pop()+"==>");
+		for(Vertex vertex:result){
+			System.out.print(vertex+"——>");
 		}
 	}
 }

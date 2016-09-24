@@ -12,13 +12,13 @@ public class Dijkstra {
 	private List<Vertex> vertexs;
 	private int[][] edges;
 	private Queue<Vertex> unVisited;
-	private Queue<Vertex> resultVertexs;
+	private List<Vertex> resultVertexs;
 	
 	public Dijkstra(List<Vertex> vertexs, int[][] edges) {
 		super();
 		this.vertexs = vertexs;
 		this.edges = edges;
-		resultVertexs=new Queue<Vertex>();
+		resultVertexs=new ArrayList<Vertex>();
 		initUnVisited();
 	}
 	
@@ -30,7 +30,7 @@ public class Dijkstra {
 				List<Vertex> neighbors=getNeighbors(vertex);
 				updateDistances(vertex,neighbors);
 				Vertex neighbor=unVisited.poll();//PriorityQueue一直都是按照path排序
-				resultVertexs.push(neighbor);
+				resultVertexs.add(neighbor);
 			}
 		}
 	}
@@ -138,8 +138,14 @@ public class Dijkstra {
 		return unVisited;
 	}
 
-	public Stack<Vertex> getResultVertexs() {
+
+
+	public List<Vertex> getResultVertexs() {
 		return resultVertexs;
+	}
+
+	public void setResultVertexs(List<Vertex> resultVertexs) {
+		this.resultVertexs = resultVertexs;
 	}
 
 	public void setVertexs(List<Vertex> vertexs) {
